@@ -2,8 +2,14 @@ const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 const User = require("./models/userModels")
+const cors = require("cors")
 
 //MiddelWare
+app.use(
+  cors({
+    origin:"http://localhost:3000",
+  })
+);
 app.use(express.json())
 
 //sample router
